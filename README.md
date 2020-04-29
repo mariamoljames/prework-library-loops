@@ -48,11 +48,11 @@ all_genres(library)
 ]
 ```
 ---
-* `num_books_read`: `num_books_read` takes in your library as an argument, and outputs an array of all of the books that you have completed.
+* `books_read`: `books_read` takes in your library as an argument, and outputs an array of all of the books that you have completed.
 
 Example
 ```ruby
-num_books_read(library)
+books_read(library)
 
 [
   {title: "Dracula", author: "Bram Stoker", genres: ["Horror", "Gothic"], pages: 418, publication_year: 1897, completed: true},
