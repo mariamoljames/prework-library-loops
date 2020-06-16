@@ -1,4 +1,4 @@
-require 'pry'
+# require 'pry'
 
 library = [
   {title: "Dracula", author: "Bram Stoker", genres: ["Horror", "Gothic"], pages: 418, publication_year: 1897, completed: true},
@@ -17,13 +17,32 @@ library = [
 ]
 
 # WRITE CODE BELOW HERE
+def all_pages(library)
+  library.reduce(0) {|sum, book| sum += book[:pages]}
+end
 
+puts all_pages(library)
 
+def all_pages_read(library)
+  library.reduce(0) {|sum, book| book[:completed] ? sum += book[:pages] : sum}
+end
 
+puts all_pages_read(library)
+
+def all_genres(library)
+  library.reduce([]) {|arr, book| arr += book[:genres]}.flatten.uniq
+
+  # library.reduce([]) {|arr, book| arr += book[:genres]}
+  # [["Political Satire", "Fantasy"], ["Historical Fiction", "Fantasy"]].flatten
+  # ["Political Satire", "Fantasy", "Historical Fiction", "Fantasy"].uniq
+  # ["Political Satire", "Fantasy", "Historical Fiction"]
+end
+
+pp all_genres(library)
 
 # WRITE CODE ABOVE HERE
 
 
-binding.pry
+# binding.pry
 
 puts "Books!"
